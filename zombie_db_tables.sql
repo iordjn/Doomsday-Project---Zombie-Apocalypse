@@ -29,7 +29,6 @@ CREATE TABLE Missions (
         FOREIGN KEY (origin_base_id)
         REFERENCES Base(base_id)
 );
-GO
 
 
 
@@ -43,13 +42,11 @@ CREATE TABLE Allies (
     notes           VARCHAR(255)      NULL,
     CONSTRAINT PK_Allies PRIMARY KEY (ally_id)
 );
-GO
 
 ALTER TABLE Allies
 ADD CONSTRAINT FK_Allies_PrimaryBase
     FOREIGN KEY (primary_base_id)
     REFERENCES Base(base_id);
-GO
 
 
 
