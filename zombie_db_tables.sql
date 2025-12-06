@@ -47,13 +47,6 @@ ADD CONSTRAINT FK_Allies_PrimaryBase
     FOREIGN KEY (primary_base_id)
     REFERENCES Base(base_id);
 
-ALTER TABLE Allies
-ADD CONSTRAINT FK_Allies_PrimaryBase
-    FOREIGN KEY (primary_base_id)
-    REFERENCES Base(base_id);
-GO
-
-
 
 /* Weapons – Arlo */
 
