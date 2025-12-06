@@ -53,6 +53,7 @@ CREATE TABLE Missions (
 );
 
 
+
 /* Allies – Ashton */
 CREATE TABLE Allies (
     ally_id         INT IDENTITY(1,1) NOT NULL,
