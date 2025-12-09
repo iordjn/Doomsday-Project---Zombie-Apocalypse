@@ -32,10 +32,10 @@ GO
 INSERT INTO Survivors 
 (first_name, last_name, age, status, base_id, primary_weapon_id, primary_vehicle_id, notes)
 VALUES
-('Arlo', 'Graves', 29, 'Active', 1, 1, 1, 'Squad leader'),
-('Jordin', 'Chavez', 22, 'Active', 3, 3, 3, 'Medic and researcher'),
-('Alex', 'Rivera', 31, 'Active', 2, 2, 2, 'Supply scavenger'),
-('Ashton', 'Cole', 27, 'Injured', 1, 4, NULL, 'Recently wounded on patrol');
+('Arlo', 'Smith', 29, 'Active', 1, 1, 1, 'Squad leader'),
+('Jordin', 'Smith', 22, 'Active', 3, 3, 3, 'Medic and researcher'),
+('Alex', 'Smith', 31, 'Active', 2, 2, 2, 'Supply scavenger'),
+('Ashton', 'Smith', 27, 'Injured', 1, 4, NULL, 'Recently wounded on patrol');
 GO
 
 /* Allies – Ashton */
