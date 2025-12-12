@@ -14,8 +14,9 @@ GO
 USE DoomsdayDB;
 GO
 
+
 /*=========================================================
-    DROP TABLES IN CORRECT ORDER (child → parent)
+    DROP TABLES IN CORRECT ORDER
 =========================================================*/
 
 IF OBJECT_ID('dbo.Supplies', 'U') IS NOT NULL DROP TABLE dbo.Supplies;
@@ -34,7 +35,7 @@ GO
 
 
 /*=========================================================
-    BASE TABLE
+    Base – Jordin
 =========================================================*/
 CREATE TABLE Base (
     base_id              INT IDENTITY(1,1) PRIMARY KEY,
@@ -49,13 +50,13 @@ GO
 
 
 /*=========================================================
-    WEAPONS TABLE
+    Weapons – Arlo
 =========================================================*/
 CREATE TABLE Weapons (
     weapon_id     INT IDENTITY(1,1) PRIMARY KEY,
     weapon_name   VARCHAR(80)  NOT NULL,
     weapon_type   VARCHAR(40)  NOT NULL,
-    damage_rating INT          NOT NULL CHECK (damage_rating BETWEEN 1 AND 10),
+    damage_rating INT NOT NULL CHECK (damage_rating BETWEEN 1 AND 10),
     [condition]   VARCHAR(20)  NOT NULL,
     ammo_type     VARCHAR(40)  NULL
 );
@@ -63,7 +64,7 @@ GO
 
 
 /*=========================================================
-    VEHICLES TABLE
+    Vehicles – Muse
 =========================================================*/
 CREATE TABLE Vehicles (
     vehicle_id    INT IDENTITY(1,1) PRIMARY KEY,
@@ -81,7 +82,7 @@ GO
 
 
 /*=========================================================
-    SURVIVORS TABLE
+    Survivors – Arlo
 =========================================================*/
 CREATE TABLE Survivors (
     survivor_id        INT IDENTITY(1,1) PRIMARY KEY,
@@ -107,7 +108,7 @@ GO
 
 
 /*=========================================================
-    MISSIONS TABLE
+    Missions – Ashton
 =========================================================*/
 CREATE TABLE Missions (
     mission_id      INT IDENTITY(1,1) PRIMARY KEY,
@@ -126,7 +127,7 @@ GO
 
 
 /*=========================================================
-    MISSION-SURVIVOR LINK TABLE
+    Mission_Survivors – Arlo
 =========================================================*/
 CREATE TABLE Mission_Survivors (
     mission_survivor_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -145,7 +146,7 @@ GO
 
 
 /*=========================================================
-    INJURY TYPE TABLE
+    Injury_Types – Arlo
 =========================================================*/
 CREATE TABLE Injury_Types (
     injury_type_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -156,7 +157,7 @@ GO
 
 
 /*=========================================================
-    INJURIES TABLE
+    Injuries – Jordin
 =========================================================*/
 CREATE TABLE Injuries (
     injury_id       INT IDENTITY(1,1) PRIMARY KEY,
@@ -175,7 +176,7 @@ GO
 
 
 /*=========================================================
-    ALLIES TABLE
+    Allies – Ashton
 =========================================================*/
 CREATE TABLE Allies (
     ally_id         INT IDENTITY(1,1) PRIMARY KEY,
@@ -194,7 +195,7 @@ GO
 
 
 /*=========================================================
-    FOOD TABLE
+    Food – Alex
 =========================================================*/
 CREATE TABLE Food (
     food_id           INT IDENTITY(1,1) PRIMARY KEY,
@@ -207,7 +208,7 @@ GO
 
 
 /*=========================================================
-    WATER TABLE
+    Water – Alex
 =========================================================*/
 CREATE TABLE Water (
     water_id        INT IDENTITY(1,1) PRIMARY KEY,
@@ -220,7 +221,7 @@ GO
 
 
 /*=========================================================
-    SUPPLIES TABLE
+    Supplies – Muse
 =========================================================*/
 CREATE TABLE Supplies (
     supply_id   INT IDENTITY(1,1) PRIMARY KEY,
