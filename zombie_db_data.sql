@@ -87,15 +87,19 @@ INSERT INTO Food (food_name, category, calories_per_unit, shelf_life_days)
 VALUES
 ('Canned Beans', 'Canned', 350, 900),
 ('Protein Bar', 'Snack', 220, 365),
-('Dried Rice', 'Dry Goods', 600, 720);
-GO
+('Dried Rice', 'Dry Goods', 600, 720),
+('Romen Cups', 'Fast Food', 330, 730),
+('Potato Soup Can', 'Canned', 150, 730);
+GO 
 
 /* Water – Alex */
 INSERT INTO Water (source_type, container_type, volume_liters, is_purified)
 VALUES
 ('River', 'Jug', 10.5, 0),
 ('Filtered Well', 'Barrel', 50, 1),
-('Rainwater', 'Bottle', 2.0, 1);
+('Rainwater', 'Bottle', 2.0, 1),
+('Lake', 'Cup', 1.5, 0),
+('Store', 'Bottle Pack', 35.0, 1);
 GO
 
 /* Supplies – Muse */
