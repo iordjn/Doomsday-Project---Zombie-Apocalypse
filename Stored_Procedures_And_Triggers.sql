@@ -1,6 +1,6 @@
 /*
 Ashton Fox
-DoomsdayDB - Missions & Allies: Stored Procedures + Validation Triggers (SQL Server)
+DoomsdayDB - Missions & Allies: Stored Procedures + Validation Triggers
 */
 
 USE DoomsdayDB;
