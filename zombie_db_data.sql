@@ -1,9 +1,9 @@
-USE ZombieDATEBASE;
+USE DoomsdayDB;
 GO
 
 /*INSERT statements  */
 
-/* Base – Jordin */
+/* Base â€“ Jordin */
 INSERT INTO Base (base_name, location_description, capacity, security_level, food_storage, water_storage)
 VALUES
 ('Fort Hope', 'Reinforced school building on east ridge', 50, 'High', 200, 300),
@@ -11,7 +11,7 @@ VALUES
 ('Downtown Bunker', 'Underground shelter beneath city hall', 35, 'High', 300, 500);
 GO
 
-/* Weapons – Arlo */
+/* Weapons â€“ Arlo */
 INSERT INTO Weapons (weapon_name, weapon_type, damage_rating, condition, ammo_type)
 VALUES
 ('M4 Carbine', 'Rifle', 8, 'Good', '5.56mm'),
@@ -20,7 +20,7 @@ VALUES
 ('Fire Axe', 'Melee', 7, 'Good', NULL);
 GO
 
-/* Vehicles – Muse */
+/* Vehicles â€“ Muse */
 INSERT INTO Vehicles (vehicle_name, vehicle_type, capacity, fuel_type, range_km, [condition], base_id)
 VALUES
 ('Ranger Truck', 'Truck', 5, 'Diesel', 320, 'Worn', 1),
@@ -28,7 +28,7 @@ VALUES
 ('Armored Van', 'Armored', 8, 'Diesel', 250, 'Pristine', 3);
 GO
 
-/* Survivors – Arlo */
+/* Survivors â€“ Arlo */
 INSERT INTO Survivors 
 (first_name, last_name, age, status, base_id, primary_weapon_id, primary_vehicle_id, notes)
 VALUES
@@ -38,7 +38,7 @@ VALUES
 ('Ashton', 'Smith', 27, 'Injured', 1, 4, NULL, 'Recently wounded on patrol');
 GO
 
-/* Allies – Ashton */
+/* Allies â€“ Ashton */
 INSERT INTO Allies (ally_name, faction_type, trust_level, primary_base_id, notes)
 VALUES
 ('Sierra Rangers', 'Militia', 'Medium', 1, 'Cooperate for shared patrols'),
@@ -46,12 +46,12 @@ VALUES
 ('Iron Wolves', 'Rogues', 'Low', 2, 'Unpredictable, sometimes hostile');
 GO
 
-/* Missions – Ashton */
+/* Missions â€“ Ashton */
 INSERT INTO Missions 
 (mission_name, mission_type, start_datetime, end_datetime, origin_base_id, [status], notes)
 VALUES
 ('Recon North Ridge', 'Recon', '2025-12-05 09:00', '2025-12-05 14:00', 1, 'Completed', 'Light zombie activity'),
-('Supply Run to Market District', 'Scavenge', '2025-12-07 11:00', NULL, 3, 'Ongoing', 'Heavy hostiles'),
+('Supply Run to Market District', 'Scavenge', '2025-12-07 11:00', NULL, 3, 'In Progress', 'Heavy hostiles'),
 ('Rescue Civilians at River Bend', 'Rescue', '2025-12-06 15:00', NULL, 2, 'Planned', 'Awaiting intel');
 GO
 
@@ -65,7 +65,7 @@ VALUES
 (3, 4, 'Rescue Lead', 1);
 GO
 
-/* InjuryTypes (link) – Arlo */
+/* InjuryTypes (link) â€“ Arlo */
 INSERT INTO Injury_Types (injury_name, severity)
 VALUES
 ('Broken Arm', 'Moderate'),
@@ -74,7 +74,7 @@ VALUES
 ('Deep Laceration', 'Moderate');
 GO
 
-/* Injuries – Jordin */
+/* Injuries â€“ Jordin */
 INSERT INTO Injuries 
 (survivor_id, injury_type, severity, injury_date, treated_by, notes, days_untreated)
 VALUES
@@ -82,7 +82,7 @@ VALUES
 (1, 'Sprained Ankle', 'Minor', '2025-12-03', 'Alex Rivera', 'Twisted during scout run', 0);
 GO
 
-/* Food – Alex */
+/* Food â€“ Alex */
 INSERT INTO Food (food_name, category, calories_per_unit, shelf_life_days)
 VALUES
 ('Canned Beans', 'Canned', 350, 900),
@@ -92,7 +92,7 @@ VALUES
 ('Potato Soup Can', 'Canned', 150, 730);
 GO 
 
-/* Water – Alex */
+/* Water â€“ Alex */
 INSERT INTO Water (source_type, container_type, volume_liters, is_purified)
 VALUES
 ('River', 'Jug', 10.5, 0),
@@ -102,7 +102,7 @@ VALUES
 ('Store', 'Bottle Pack', 35.0, 1);
 GO
 
-/* Supplies – Muse */
+/* Supplies â€“ Muse */
 INSERT INTO Supplies (supply_name, category, quantity, unit, base_id)
 VALUES
 ('Bandages', 'Medical', 40, 'pcs', 1),
