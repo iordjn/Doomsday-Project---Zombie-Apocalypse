@@ -1,8 +1,6 @@
 USE DoomsdayDB;
 GO
 
-/*INSERT statements  */
-
 /* Base – Jordin */
 INSERT INTO Base (base_name, location_description, capacity, security_level, food_storage, water_storage)
 VALUES
@@ -12,12 +10,13 @@ VALUES
 GO
 
 /* Weapons – Arlo */
-INSERT INTO Weapons (weapon_name, weapon_type, damage_rating, condition, ammo_type)
+INSERT INTO Weapons (weapon_name, weapon_type, damage_rating, [condition], ammo_type)
 VALUES
 ('M4 Carbine', 'Rifle', 8, 'Good', '5.56mm'),
 ('Baseball Bat', 'Melee', 5, 'Worn', NULL),
 ('9mm Pistol', 'Handgun', 6, 'Good', '9mm'),
-('Fire Axe', 'Melee', 7, 'Good', NULL);
+('Fire Axe', 'Melee', 7, 'Good', NULL),
+('Hunting Knife', 'Melee', 4, 'Good', NULL);
 GO
 
 /* Vehicles – Muse */
@@ -29,13 +28,13 @@ VALUES
 GO
 
 /* Survivors – Arlo */
-INSERT INTO Survivors 
+INSERT INTO Survivors
 (first_name, last_name, age, status, base_id, primary_weapon_id, primary_vehicle_id, notes)
 VALUES
 ('Arlo', 'Smith', 29, 'Active', 1, 1, 1, 'Squad leader'),
 ('Jordin', 'Smith', 22, 'Active', 3, 3, 3, 'Medic and researcher'),
 ('Alex', 'Smith', 31, 'Active', 2, 2, 2, 'Supply scavenger'),
-('Ashton', 'Smith', 27, 'Injured', 1, 4, NULL, 'Recently wounded on patrol');
+('Ashton', 'Smith', 27, 'Injured', 1, 4, NULL, 'Recently wounded on patrol'),
 ('Maya', 'Ops', 26, 'Active', 2, 5, 2, 'Recon specialist');
 GO
 
@@ -48,7 +47,7 @@ VALUES
 GO
 
 /* Missions – Ashton */
-INSERT INTO Missions 
+INSERT INTO Missions
 (mission_name, mission_type, start_datetime, end_datetime, origin_base_id, [status], notes)
 VALUES
 ('Recon North Ridge', 'Recon', '2025-12-05 09:00', '2025-12-05 14:00', 1, 'Completed', 'Light zombie activity'),
@@ -66,7 +65,7 @@ VALUES
 (3, 4, 'Rescue Lead', 1);
 GO
 
-/* InjuryTypes (link) – Arlo */
+/* InjuryTypes – Arlo */
 INSERT INTO Injury_Types (injury_name, severity)
 VALUES
 ('Broken Arm', 'Moderate'),
@@ -76,7 +75,7 @@ VALUES
 GO
 
 /* Injuries – Jordin */
-INSERT INTO Injuries 
+INSERT INTO Injuries
 (survivor_id, injury_type_id, severity, injury_date, treated_by, notes, days_untreated)
 VALUES
 (4, 4, 'Moderate', '2025-12-06', 'Jordin Chavez', 'Hit by debris during rescue attempt', 1),
@@ -91,7 +90,7 @@ VALUES
 ('Dried Rice', 'Dry Goods', 600, 720),
 ('Romen Cups', 'Fast Food', 330, 730),
 ('Potato Soup Can', 'Canned', 150, 730);
-GO 
+GO
 
 /* Water – Alex */
 INSERT INTO Water (source_type, container_type, volume_liters, is_purified)
