@@ -164,3 +164,26 @@ BEGIN
     END
 END;
 GO
+
+
+-- ============================================
+-- TRIGGER: Vehicle Break Alert
+-- ============================================
+CREATE TRIGGER trg_VehicleBreakAlert
+ON Vehicles
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE([condition]) 
+    BEGIN
+        IF EXISTS (SELECT * FROM inserted WHERE [condition] = 'Broken')
+        BEGIN
+            PRINT 'ALERT: A vehicle has broken down! Mission capability reduced.';
+        END
+    END
+END;
+GO
+
+-- TEST: Simulate vehicle breaking down (triggers the alert)
+UPDATE Vehicles SET [condition] = 'Broken' WHERE vehicle_id = 2;
+GO
