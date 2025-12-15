@@ -78,8 +78,8 @@ GO
 INSERT INTO Injuries 
 (survivor_id, injury_type, severity, injury_date, treated_by, notes, days_untreated)
 VALUES
-(4, 'Deep Laceration', 'Moderate', '2025-12-06', 'Jordin Chavez', 'Hit by debris during rescue attempt', 1),
-(1, 'Sprained Ankle', 'Minor', '2025-12-03', 'Alex Rivera', 'Twisted during scout run', 0);
+(4, 4, 'Moderate', '2025-12-06', 'Jordin Chavez', 'Hit by debris during rescue attempt', 1),
+(1, 3, 'Minor', '2025-12-03', 'Alex Rivera', 'Twisted during scout run', 0);
 GO
 
 /* Food – Alex */
