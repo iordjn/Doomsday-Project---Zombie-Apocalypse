@@ -7,7 +7,7 @@ GROUP BY source_type;
 /* for the food table */
 SELECT food_name, shelf_life_days
 FROM FOOD
-WHERE shelf_life_day > 700;
+WHERE shelf_life_days > 700;
 
 /*Ashton querys*/
 ------------------------------------------------------------
