@@ -2,7 +2,7 @@
    SYSTEM OPERATOR (SERVER-LEVEL ADMIN)
   */
 
-USE DoomsdayDB;
+USE master;
 GO
 
 CREATE LOGIN sys_operator
@@ -19,6 +19,8 @@ GO
    BASE USER – VIEW ONLY (READ-ONLY REPORTING)
  */
 
+USE DoomsdayDB;
+GO
 /* Create reporting view */
 CREATE VIEW vw_SurvivorStatus
 AS
