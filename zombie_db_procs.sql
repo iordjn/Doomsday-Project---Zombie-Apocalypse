@@ -109,3 +109,24 @@ BEGIN
     VALUES (@ally_name, @faction_type, @trust_level, @primary_base_id, @notes);
 END;
 GO
+
+-- Alexander Food
+-- Food table
+GO
+CREATE PROCEDURE sp_UpdateFood
+	@food_id INT,
+	@food_name VARCHAR (80),
+	@category VARCHAR (40),
+	@calories_per_unit INT,
+	@shelf_life_days INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE Food
+	SET food_name = @food_name,
+		category =@category,
+		calories_per_unit = @calories_per_unit,
+		shelf_life_days = @shelf_life_days
+	WHERE food_id = @food_id;
+END;
