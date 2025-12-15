@@ -162,7 +162,7 @@ GO
 CREATE TABLE Injuries (
     injury_id       INT IDENTITY(1,1) PRIMARY KEY,
     survivor_id     INT NOT NULL,
-    injury_type     VARCHAR(80),
+    injury_type_id  INT NOT NULL,
     severity        VARCHAR(20),
     injury_date     DATE,
     treated_by      VARCHAR(80),
