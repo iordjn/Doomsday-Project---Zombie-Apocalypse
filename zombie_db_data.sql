@@ -36,6 +36,7 @@ VALUES
 ('Jordin', 'Smith', 22, 'Active', 3, 3, 3, 'Medic and researcher'),
 ('Alex', 'Smith', 31, 'Active', 2, 2, 2, 'Supply scavenger'),
 ('Ashton', 'Smith', 27, 'Injured', 1, 4, NULL, 'Recently wounded on patrol');
+('Maya', 'Ops', 26, 'Active', 2, 5, 2, 'Recon specialist');
 GO
 
 /* Allies – Ashton */
