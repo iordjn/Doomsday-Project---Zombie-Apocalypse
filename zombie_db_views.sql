@@ -124,3 +124,22 @@ LEFT JOIN Allies a
     ON b.base_id = a.primary_base_id
 GROUP BY b.base_name;
 GO
+
+-- Survivors
+CREATE VIEW vw_SurvivorDetails
+AS
+SELECT
+    s.survivor_id,
+    s.first_name,
+    s.last_name,
+    s.age,
+    s.status,
+    b.base_name,
+    w.weapon_name AS primary_weapon,
+    v.vehicle_name AS primary_vehicle,
+    s.notes
+FROM Survivors s
+LEFT JOIN Base b ON s.base_id = b.base_id
+LEFT JOIN Weapons w ON s.primary_weapon_id = w.weapon_id
+LEFT JOIN Vehicles v ON s.primary_vehicle_id = v.vehicle_id;
+GO
