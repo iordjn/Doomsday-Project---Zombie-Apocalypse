@@ -143,3 +143,17 @@ LEFT JOIN Base b ON s.base_id = b.base_id
 LEFT JOIN Weapons w ON s.primary_weapon_id = w.weapon_id
 LEFT JOIN Vehicles v ON s.primary_vehicle_id = v.vehicle_id;
 GO
+
+
+-- ============================================
+-- VIEW: Medical Supplies Only
+-- ============================================
+CREATE VIEW vw_MedicalSupplies AS
+SELECT supply_name, quantity, unit, base_id
+FROM Supplies
+WHERE category = 'Medical';
+GO
+
+-- TEST: Query the view
+SELECT * FROM vw_MedicalSupplies;
+GO
