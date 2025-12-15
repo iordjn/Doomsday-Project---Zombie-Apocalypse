@@ -107,3 +107,23 @@ FROM Base b
 LEFT JOIN Allies a
     ON b.base_id = a.primary_base_id
 WHERE a.ally_id IS NULL;
+
+
+-- ============================================
+-- QUERY 1: Emergency Capable Vehicles
+-- ============================================
+SELECT vehicle_name, vehicle_type, capacity, range_km, condition 
+FROM Vehicles 
+WHERE condition IN ('Pristine', 'Good') 
+  AND capacity >= 4 
+  AND range_km > 200;
+GO
+
+-- ============================================
+-- QUERY 2: Critical Low Supplies Alert
+-- ============================================
+SELECT supply_name, quantity, unit, base_id
+FROM Supplies
+WHERE quantity < 10
+ORDER BY quantity ASC;
+GO
