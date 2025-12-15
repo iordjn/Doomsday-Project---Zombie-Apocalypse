@@ -1,3 +1,11 @@
+-- capable vehicles
+
+SELECT vehicle_name, vehicle_type, capacity, range_km, condition 
+FROM Vehicles 
+WHERE condition IN ('Pristine', 'Good') 
+  AND capacity >= 4 
+  AND range_km > 50;
+  
 -- 1. Stored Procedure: Mark vehicle as mission-ready
 CREATE PROCEDURE usp_RepairVehicle
     @vehicle_id INT
@@ -62,3 +70,10 @@ GO
 -- After finding 20 bandages at a hospital:
 EXEC usp_AddSupplies @supply_id = 1, @amount_to_add = 20;
 
+
+-- supplies table
+--5. Query: Critical Low Supplies
+SELECT supply_name, quantity, unit, base_id
+FROM Supplies
+WHERE quantity < 10
+ORDER BY quantity ASC;
