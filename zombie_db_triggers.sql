@@ -144,3 +144,23 @@ BEGIN
     END
 END;
 GO
+-- Mission_Survivors
+CREATE TRIGGER trg_PreventDuplicateMissionSurvivor
+ON Mission_Survivors
+AFTER INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM Mission_Survivors ms
+        JOIN inserted i
+            ON ms.mission_id = i.mission_id
+           AND ms.survivor_id = i.survivor_id
+           AND ms.mission_survivor_id <> i.mission_survivor_id
+    )
+    BEGIN
+        RAISERROR('This survivor is already assigned to the mission.', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+END;
+GO
