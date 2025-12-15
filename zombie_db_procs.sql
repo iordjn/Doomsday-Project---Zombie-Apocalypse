@@ -133,3 +133,49 @@ BEGIN
     VALUES (@ally_name, @faction_type, @trust_level, @primary_base_id, @notes);
 END;
 GO
+
+
+-- ============================================
+-- STORED PROCEDURE 1: Repair Vehicle
+-- ============================================
+CREATE PROCEDURE usp_RepairVehicle
+    @vehicle_id INT
+AS
+BEGIN
+    UPDATE Vehicles
+    SET [condition] = 'Pristine'
+    WHERE vehicle_id = @vehicle_id 
+      AND [condition] IN ('Worn', 'Broken'); 
+    
+    IF @@ROWCOUNT > 0
+        SELECT 'Vehicle repaired to Pristine condition' AS result;
+    ELSE
+        SELECT 'Vehicle does not need repair (already Good or Pristine)' AS result;
+END;
+GO
+
+-- TEST: Repair a vehicle
+EXEC usp_RepairVehicle @vehicle_id = 2;
+GO
+
+-- ============================================
+-- STORED PROCEDURE 2: Add Supplies
+-- ============================================
+CREATE PROCEDURE usp_AddSupplies
+    @supply_id INT,
+    @amount_to_add INT
+AS
+BEGIN
+    UPDATE Supplies
+    SET quantity = quantity + @amount_to_add
+    WHERE supply_id = @supply_id;
+    
+    SELECT 'Supplies added successfully' AS message;
+END;
+GO
+
+-- TEST: Add 15 bandages after hospital scavenging
+EXEC usp_AddSupplies @supply_id = 1, @amount_to_add = 15;
+GO
+
+
